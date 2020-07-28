@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <script src="script.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <main>
+            <header>
+                <h1>JavaScript ECMA 6</h1>
+            </header>
+            <section>
+                <article>
+                    <h2>Function</h2>
+                    <p>A linguagem Javascript possui meios de criar função por diversos meios. Na versão 6 foi introduzida a Arrow Function <strong>(=>)</strong>.</p>
+                    <p>Abaixo meios de criar funções no Javascript:</p>
+                </article>
+                <article>
+                    <h2>Function (modo legado)</h2>
+                    <p>Pelo modo legado é necessário indicar um nome para a função. Como boa prática, nomeie funções sempre com verbos (escrever, ler, testar...).</p>
+                    <p class="descritivo">Exemplo de função:</p>
+                    <pre>function testar(value){
+    console.log(value);
+    }
+    teste("Saudação!");
+                    </pre>
+                    <p class="resultado">Resultado: <strong>Saudação!</strong></p>
+                </article>
+
+                <article>
+                    <h2>Função Anônima</h2>
+                    <p class="descritivo">O Javascript permite adicionar uma função em uma variável. Quando isto é feito, o nome da função deve ser omitido.</p>
+                    <pre>var log = function(value){
+    console.log(value)
+    }
+    log('Hallo!')
+                    </pre>
+                    <p class="resultado">Resultado: <strong>Hallo!</strong></p>
+                </article>
+
+                <article>
+                    <h2>Função com Return</h2>
+                    <p class="descritivo">Variável com uma função interna, retornando valor (utilização do RETURN)</p>
+                    <pre>
+    var log = function(value){
+        return value+1;
+    }
+    console.log(log(1));
+                    </pre>
+                    <p class="resultado">Resultado <strong>2</strong></p>
+                </article>
+
+                <article>
+                    <h2>Outra função anômina</h2>
+                    <p class="descritivo">Exibindo um exemplo de uma função de soma</p>
+                    <pre>
+    let sum=function(a,b){
+        return a+b;
+    }
+    console.log(sum(1,2))
+                    </pre>
+                    <p class="resultado">Resultado: <strong>3</strong></p>
+                </article>
+
+                <article>
+                    <h2>Arrow Function</h2>
+                    <p class="descritivo">Esta também é uma função anônima, portanto, nomeá-la é desnecessário, porém atribuí-la a uma variável é essencial.</p>
+                    <pre>
+    let sumArrow = (a, b) => a + b;
+    console.log(sumArrow(3,4))
+                    </pre>
+                    <p class="resultado">Resultado: <strong>7</strong></p>
+                </article>
+
+                <article>
+                    <h2>Arrow Function com statments</h2>
+                    <p class="descritivo">Quando uma Arrow Function for utilizada com statments, há a necessidade de se colocar <strong>{}</strong>.</p>
+                    <pre>
+    var arrowF = (a,b)=>{
+        return a+b;
+    }
+    console.log(arrowF(4,6))
+                    </pre>
+                    <p class="resultado">Resultado: <strong>10</strong></p>
+                </article>
+
+                <article>
+                    <h2>Arrow Function com um único parâmetro</h2>
+                    <p class="descritivo">Se a Arrow Function possuir apenas um parâmetro, os <strong>()</strong> poderão ser omitidos.</p>
+                    <p>Importante salientar que Arrow Functions não podem ser utilizadas com Hoisting (função ser invocada antes de sua declaração).</p>
+                    <pre>
+    var elevarQuadrado = c => c*c
+    console.log(elevarQuadrado(3));
+                    </pre>
+                    <p class="resultado">Resultado: <strong>9</strong></p>
+                </article>
+
+                <article>
+                    <h2></h2>
+                    <p class="descritivo"></p>
+                    <pre></pre>
+                    <p class="resultado">Resultado: <strong></strong></p>
+                </article>
+
+                <article>
+                    <h2></h2>
+                    <p class="descritivo"></p>
+                    <pre></pre>
+                    <p class="resultado">Resultado: <strong></strong></p>
+                </article>
+
+                <article>
+                    <h2></h2>
+                    <p class="descritivo"></p>
+                    <pre></pre>
+                    <p class="resultado">Resultado: <strong></strong></p>
+                </article>
+
+                <article>
+                    <h2></h2>
+                    <p class="descritivo"></p>
+                    <pre></pre>
+                    <p class="resultado">Resultado: <strong></strong></p>
+                </article>
+
+                <article>
+                    <h2></h2>
+                    <p class="descritivo"></p>
+                    <pre></pre>
+                    <p class="resultado">Resultado: <strong></strong></p>
+                </article>
+
+                <article>
+                    <h2></h2>
+                    <p class="descritivo"></p>
+                    <pre></pre>
+                    <p class="resultado">Resultado: <strong></strong></p>
+                </article>
+
+
+
+
+
+
+                <article>
+                    <h2></h2>
+                    <p class="descritivo"></p>
+                    <pre></pre>
+                    <p class="resultado">Resultado: <strong></strong></p>
+                </article>
+            </section>
+        </main>
+    </body>
+</html>

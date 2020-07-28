@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <script src="script.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <main>
+            <header>
+                <h1>JavaScript ECMA 6</h1>
+            </header>
+            <section>
+                <article>
+                    <h2>Default Values</h2>
+                    <p>Para auxiliar no gerenciamento de funcionabilidades, o Javascript oferece o recurso Default Values</p>
+                    <p>Este recurso visa implementar valores padrão para variáveis em funções quando para estas não forem atribuídos valores.</p>
+                </article>
+
+                <article>
+                    <h2>Definição de valores em funções (modo legado)</h2>
+                    <p>Em versões anteriores ao ECMA 6, era necessário prever erros por falta de declaração de variáveis e realizar a gestão de tais itens por meio de validações:</p>
+                    <p class="descritivo">Exemplo:</p>
+                    <pre>function multiplicar(a, b){
+    return a*b;
+    }
+    console.log(mult(4,5));
+                    </pre>
+                    <p class="resultado">Resultado: <strong>20</strong></p>
+                    <p>Mas se o usuário esquecer de atribuir o valor de uma das variáveis acima, terá como resultado NaN (Not a Number), pois uma variável sem atribuído, por padrão, receberá o valor 'undefined'.</p>
+                    <pre>
+    console.log(mult(4));
+                    </pre>
+                    <p class="resultado">Resultado esperado: <strong>0</strong></p>
+                    <p>Pois 4 * 0 = 0</p>
+                    <p class="resultado">Resultado obtido: <strong>NaN</strong></p>
+                </article>
+
+                <article>
+                    <h2>Utilizando Defaul Values</h2>
+                    <p class="descritivo">Para facilitar a gestão desta possibilidade, o programador pode pré-definir valores de variáveis.</p>
+                    <pre>
+    var multDef = (a = 1, b = 1) => {
+        return a * b;
+    }
+    console.log(multDef(undefined, 4));
+                    </pre>
+                    <p class="resultado">Resultado esperado: <strong>4</strong></p>
+                    <p>Espera-se 4 como resultado, pois o valor default das variáveis a e b é igual a 1. Como foi solicitado atribuir o valor da variável a como undefined e da variável b, 4. temos 4 * 1 = 4.</p>
+                    <p class="resultado">Resultado obtido: <strong>4</strong></p>
+                </article>
+
+                <article>
+                    <h2>Default Values - referência para outras variáveis</h2>
+                    <p class="descritivo">Com Default Values é possível atribuir valor de variáveis como exposto no exemplo abaixo:</p>
+                    <pre>
+    var multDef = (a = 1, b = a) => {
+        return a * b;
+    }
+    console.log(multDef(4));
+                    </pre>
+                    <p class="resultado">Resultado esperado: <strong>16</strong></p>
+                    <p class="resultado">Resultado obtido: <strong>16</strong></p>
+                    <p>Porém, se tivermos:</p>
+                    <pre>
+    var multDef3 = (c = d, d = 1) => {
+        return c * d;
+    }
+    console.log(multDef3(undefined, 5));
+                    </pre>
+                    <p>Será retornado um erro, pois não é possível invocar uma variável sem termos inicializado a mesma.</p>
+                </article>
+
+                <article>
+                    <h2>Lazy Evaluation</h2>
+                    <p class="descritivo">Vamos supor que precisamos utilizar uma função e que uma das variáveis receberá algum número randômico.</p>
+                    <p>Primeiro, geração de número randômico:</p>
+                    <pre>
+    function randomNumber(){
+        return Math.random()*10;
+    }
+                    </pre>
+                    <p>Agora a implementação do número em uma função:</p>
+                    <pre>
+    var multDef4 = (c, d = randomNumber()) => {
+        return c * d;
+    }
+    console.log(multDef4(5));                    
+                    </pre>
+                    <p>Desta maneira, toda vez que o usuário esquecer de passar o segundo parâmetro, teremos uma geração de valor randômica. Isto pode ser usado para gerar chaves personalizadas, IDs, ou qualquer outro item que não possa ter repetição.</p>
+                    <p class="resultado">Resultado: <strong>Um valor numérico randômico a cada execução.</strong></p>
+                </article>
+            </section>
+        </main>
+    </body>
+</html>
